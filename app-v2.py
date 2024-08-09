@@ -15,6 +15,12 @@ def clean_screen():
         _ = system('clear')
 
 
+def carregar_palavras_do_arquivo(nome_arquivo):
+    with open(nome_arquivo, "r") as file:
+        palavras = file.read().splitlines()  # Lê o arquivo e divide as linhas em uma lista
+    return palavras
+
+
 # Função que desenha a forca na tela
 def display_hangman(chances):
 
@@ -121,8 +127,7 @@ def game():
     print("Adivinhe a palavra abaixo\n")
 
     # 1- Definir a lista de palavras possíveis
-    palavras = ['banana', 'abacaxi', 'melancia', 'jabuticaba', 'mexerica',
-                'laranja', 'pera', 'graviola', 'melao', 'mangostao', 'manga']
+    palavras = carregar_palavras_do_arquivo(r"D:\Projeto01\frutas.txt")
 
     # 2- Escolher uma palavra aleatória da lista
     palavra = random.choice(palavras)
