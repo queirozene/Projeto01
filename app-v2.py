@@ -17,7 +17,8 @@ def clean_screen():
 
 def carregar_palavras_do_arquivo(nome_arquivo):
     with open(nome_arquivo, "r") as file:
-        palavras = file.read().splitlines()  # Lê o arquivo e divide as linhas em uma lista
+        # Lê o arquivo e divide as linhas em uma lista
+        palavras = file.read().splitlines()
     return palavras
 
 
@@ -151,18 +152,17 @@ def game():
 
         while True:
             tentativa = input("\nDigite uma letra: ").lower()
-            
+
             if len(tentativa) != 1 or not tentativa.isalpha():
                 print("Entrada inválida. Por favor, digite apenas uma letra.")
             elif tentativa in letras_tentadas:
-                print(f"Você já tentou a letra '{tentativa}'. Tente outra letra.")
+                print(f"Você já tentou a letra '{
+                      tentativa}'. Tente outra letra.")
             else:
                 letras_tentadas.add(tentativa)
                 break
 
-
         clean_screen()
-        
 
         if tentativa in palavra:
             index = 0
@@ -194,7 +194,8 @@ def game():
 if __name__ == "__main__":
     while True:
         game()
-        resposta = input("Você quer jogar de novo? (sim/não): ").strip().lower()
+        resposta = input(
+            "Você quer jogar de novo? (sim/não): ").strip().lower()
         if resposta == "não":
             print("Finalizando o programa.")
             break
