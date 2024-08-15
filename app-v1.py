@@ -9,8 +9,8 @@ def clean_screen():
     # windows
     if name == 'nt':
         _ = system('cls')
-    
-    #mac ou linux
+
+    # mac ou linux
     else:
         _ = system('clear')
 
@@ -22,16 +22,17 @@ def game():
     print("Adivinhe a palavra abaixo\n")
 
     # 1- Definir a lista de palavras possíveis
-    palavras = ['banana', 'abacaxi', 'melancia', 'jabuticaba', 'mexerica', 'laranja', 'pera', 'graviola', 'melao', 'mangostao', 'manga']
+    palavras = ['banana', 'abacaxi', 'melancia', 'jabuticaba', 'mexerica',
+                'laranja', 'pera', 'graviola', 'melao', 'mangostao', 'manga']
 
     # 2- Escolher uma palavra aleatória da lista
     palavra = random.choice(palavras)
 
     letras_descobertas = ['_' for letra in palavra]
-    
+
     # 4- Definir o número máximo de tentativas permitidas
     chances = 8
-    
+
     # 3- Criar uma lista vazia para armazenar as letras adivinhadas
     letras_incorretas = []
 
@@ -57,7 +58,7 @@ def game():
         if "_" not in letras_descobertas:
             print("Você venceu, a palavra era:", palavra)
             break
-    
+
     if "_" in letras_descobertas:
         print("\nVocê perdeu! A palavra era:", palavra)
 
